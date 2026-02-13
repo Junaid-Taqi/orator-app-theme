@@ -1,0 +1,173 @@
+// Sidebar styles for Orator theme
+
+.orator-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0c2b4a 0%, #163a57 60%);
+  color: #ffffff;
+  padding: 28px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 50;
+}
+
+.orator-sidebar .sidebar-toggle {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: -44px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.brand {
+  margin-bottom: 22px;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.brand-sub {
+  color: #7fd7e2;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.orator-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+}
+
+.orator-item {
+  margin: 10px 0;
+}
+
+.orator-item > a {
+  display: flex;
+  align-items: center;
+  color: #dff6fb;
+  text-decoration: none;
+  padding: 12px 10px;
+  border-radius: 8px;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.orator-item > a .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  color: #7fd7e2;
+  font-size: 20px;
+}
+
+.orator-item > a .label {
+  font-size: 16px;
+  color: #dff6fb;
+}
+
+.orator-item:hover > a,
+.orator-item.selected > a {
+  background: rgba(255,255,255,0.04);
+  color: #ffffff;
+}
+
+.orator-item.selected > a .icon,
+.orator-item:hover > a .icon {
+  color: #aef0f6;
+}
+
+.child-menu {
+  list-style: none;
+  margin: 8px 0 0 48px;
+  padding: 0;
+}
+
+.sidebar-footer {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.sidebar-footer .settings {
+  display: flex;
+  align-items: center;
+  color: #dff6fb;
+  text-decoration: none;
+  padding: 8px 10px;
+}
+
+.sidebar-footer .settings i {
+  margin-right: 10px;
+  color: #7fd7e2;
+}
+
+.orator-item img {
+    width: 26px !important;
+}
+
+/* Responsive behaviour */
+@media (max-width: 991px) {
+  .orator-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 220ms cubic-bezier(.2,.8,.2,1);
+    width: 260px;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.35);
+  }
+
+  body.sidebar-open .orator-sidebar {
+    transform: translateX(0);
+  }
+
+  .orator-sidebar .sidebar-toggle {
+    display: block;
+    right: -50px;
+    background: #0c2b4a;
+    padding: 8px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+
+  /* small screens: reduce paddings */
+  .orator-sidebar .brand-title {
+    font-size: 22px;
+  }
+}
+
+/* When sidebar present, add content offset on large screens */
+@media (min-width: 992px) {
+  /* Shift entire wrapper so header and portlet content sit to the right of the fixed sidebar */
+  #wrapper {
+    margin-left: 260px;
+  }
+
+  /* Ensure the mobile transform rules do not apply on large screens */
+  .orator-sidebar {
+    transform: none;
+  }
+}
