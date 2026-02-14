@@ -6,8 +6,7 @@
 <#assign userId = user.getUserId() />
 <#assign fullName = user.getFullName() />
 <#assign emailAddress = user.getEmailAddress() />
-<#assign userGroups = user.getUserGroups() />
-<#assign roles = user.getRoles() />
+<#assign groups = user.getGroups() />
 
 
 <head>
@@ -87,34 +86,23 @@
 
 
 <script>
-<#if is_signed_in>
-    const liferayUser = {
-        userId: "${userId}",
-        fullName: "${fullName}",
-        email: "${emailAddress}",
-        userGroups: [
-            <#list userGroups as group>
-            {
-                id: "${group.getUserGroupId()}",
-                name: "${group.getName()}"
-            }<#if group_has_next>,</#if>
-            </#list>
-        ],
-        roles: [
-            <#list roles as role>
-            {
-                id: "${role.getRoleId()}",
-                name: "${role.getName()}"
-            }<#if role_has_next>,</#if>
-            </#list>
-        ]
-    };
-
-    sessionStorage.setItem("liferayUser", JSON.stringify(liferayUser));
-    console.log("Liferay User:", liferayUser);
-    
-
-</#if>
+	<#if is_signed_in>
+	    const liferayUser = {
+	        userId: "${userId}",
+	        fullName: "${fullName}",
+	        email: "${emailAddress}",
+	        groups: [
+				<#list groups as group>
+				{
+				    id: "${group.getGroupId()}",
+				    name: "${group.getDescriptiveName(themeDisplay.getLocale())}"
+				}<#if group_has_next>,</#if>
+				</#list>
+			]
+	    };
+	    sessionStorage.setItem("liferayUser", JSON.stringify(liferayUser));
+	    console.log("Liferay User:", liferayUser);
+	</#if>
 </script>
 
 </body>

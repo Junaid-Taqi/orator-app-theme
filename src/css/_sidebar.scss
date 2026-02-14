@@ -171,3 +171,20 @@
     transform: none;
   }
 }
+
+.portlet-layout .portlet-header{
+  display: none !important;
+}
+
+.portlet-decorate .portlet-content{
+  padding: 0 !important;
+}
+
+.portlet{
+  margin: 0 !important;
+  border: none !important;
+}
+
+.col-md-12.portlet-column.portlet-column-only{
+  padding: 0 !important;
+}
