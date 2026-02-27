@@ -102,6 +102,9 @@
 	    };
 	    sessionStorage.setItem("liferayUser", JSON.stringify(liferayUser));
 	    console.log("Liferay User:", liferayUser);
+	<#else>
+	    localStorage.clear();
+	    sessionStorage.clear();
 	</#if>
 </script>
 
