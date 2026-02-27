@@ -50,9 +50,9 @@
 		</#list>
 	</ul>
 
-	<div class="sidebar-footer">
+	<#--  <div class="sidebar-footer">
 		<a href="#" class="settings" role="button"><i class="fa fa-cog" aria-hidden="true"></i> <span>Settings</span></a>
-	</div>
+	</div>  -->
 
 	<div class="sidebar-footer">
 		<a href="/c/portal/logout" class="settings" role="button"><i class="fa fa-sign-out" aria-hidden="true"></i> <span>Log out</span></a>
