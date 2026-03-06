@@ -102,6 +102,11 @@
 	    localStorage.clear();
 	    sessionStorage.clear();
 	</#if>
+	
+	var userLandingPageUrl = localStorage.getItem("userLandingPageUrl");
+    if (userLandingPageUrl === null) {
+    	localStorage.setItem("userLandingPageUrl", window.location.href);
+    }
 </script>
 
 </body>
