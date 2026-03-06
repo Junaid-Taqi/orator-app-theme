@@ -10,22 +10,18 @@
 
 
 <head>
-	<title>${html_title}</title>
-
+	<title>${the_title}</title>
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
-
 	<@liferay_util["include"] page=top_head_include />
-
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body class="${css_class}">
-
-<@liferay_ui["quick-access"] contentId="#main-content" />
-
-<@liferay_util["include"] page=body_top_include />
-
-<@liferay.control_menu />
+	<#if is_signed_in && permissionChecker.isOmniadmin()>
+        <@liferay_ui["quick-access"] contentId="#main-content" />
+        <@liferay_util["include"] page=body_top_include />
+        <@liferay.control_menu />
+    </#if>
 
 <div class="position-relative" id="wrapper">
 	<header id="banner" role="banner">
