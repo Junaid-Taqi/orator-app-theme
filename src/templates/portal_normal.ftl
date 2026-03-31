@@ -12,6 +12,7 @@
 <head>
 	<title>${the_title}</title>
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 	<@liferay_util["include"] page=top_head_include />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
