@@ -100,9 +100,9 @@
 			]
 	    };
 	    sessionStorage.setItem("liferayUser", JSON.stringify(liferayUser));
-	    var userLandingPageUrl = sessionStorage.getItem("userLandingPageUrl");
+	    var userLandingPageUrl = localstorage.getItem("userLandingPageUrl");
 	    if (userLandingPageUrl === null) {
-	    	sessionStorage.setItem("userLandingPageUrl", window.location.href);
+	    	localstorage.setItem("userLandingPageUrl", window.location.href);
 	    }
 	    console.log("Liferay User:", liferayUser);
 	<#else>
